@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+}
+
+.container form {
+    width: 100%;
+}
+h1, h3 {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.buttoncreate {
+    width: 80%;
+    margin: 0 auto;
+}
