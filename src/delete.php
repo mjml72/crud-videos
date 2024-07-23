@@ -10,7 +10,7 @@
             $video = getByID($id);
             if($video){
                 $conn = dbConnection();
-                $query = $conn->prepare('DELETE FROM Videos WHERE Videoid = :id;');
+                $query = $conn->prepare('DELETE FROM videos WHERE videoid = :id;');
                 $query->bindParam(':id', $id);
                 $query->execute();
     

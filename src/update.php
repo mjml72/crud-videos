@@ -20,19 +20,19 @@
     }
 
     
-    if(isset($_GET['id']) && isset($_POST['title']) && isset($_POST['programming']) && isset($_POST['techstack'])){
+    if(isset($_GET['id']) && isset($_POST['title']) && isset($_POST['proglanguage']) && isset($_POST['techstack'])){
         try{
             // global $id;
             $title = secureData($_POST['title']);
-            $programming = secureData($_POST['programming']);
+            $proglanguage = secureData($_POST['proglanguage']);
             $techstack = secureData($_POST['techstack']);
 
             $conn = dbConnection();
-            $query = $conn->prepare('UPDATE Videos SET Title = :title, Programing = :programming, Techstack = :techstack
-            WHERE Videoid = :id;');
+            $query = $conn->prepare('UPDATE videos SET title = :title, proglanguage = :proglanguage, techstack = :techstack
+            WHERE videoid = :id;');
             $query->bindParam(':id', $id);
             $query->bindParam(':title', $title);
-            $query->bindParam(':programming', $programming);
+            $query->bindParam(':proglanguage', $proglanguage);
             $query->bindParam(':techstack', $techstack);
             $query->execute();
             
@@ -60,15 +60,15 @@
             <form method="POST">
                 <div >
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="<?= $video['Title'] ?>"  required>
+                    <input type="text" class="form-control" id="title" name="title" value="<?= $video['title'] ?>"  required>
                 </div>
                 <div>
                     <label for="programminglanguge" class="form-label">Programming Language</label>
-                    <input type="text" class="form-control" id="programminglanguge" name="programming" value="<?= $video['Programing'] ?>" required>
+                    <input type="text" class="form-control" id="programminglanguge" name="proglanguage" value="<?= $video['proglanguage'] ?>" required>
                 </div>
                 <div>
                     <label class="form-label" for="techstack">Techstack</label>
-                    <input type="text" class="form-control" id="techstack" name="techstack" value="<?= $video['Techstack'] ?>" required>
+                    <input type="text" class="form-control" id="techstack" name="techstack" value="<?= $video['techstack'] ?>" required>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Update</button>
             </form>

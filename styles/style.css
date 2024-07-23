@@ -26,4 +26,13 @@ h1, h3 {
 .buttoncreate {
     width: 80%;
     margin: 0 auto;
+    text-align: center;
+}
+
+.material-symbols-outlined.orange{
+    color: orange;
+}
+
+.material-symbols-outlined.red{
+    color: red;
 }

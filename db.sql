@@ -1,9 +1,8 @@
 CREATE DATABASE freecodecamp;
 
-CREATE TABLE Videos (
-	Videoid int NOT NULL AUTO_INCREMENT,
-    Title varchar(255) NOT NULL,
-    Programing varchar(255) NOT NULL,
-    Techstack varchar(255) NOT NULL,
-    PRIMARY KEY (Videoid)
+CREATE TABLE videos (
+	videoid SERIAL NOT NULL PRIMARY KEY,
+	title VARCHAR(255) NOT NULL,
+	proglanguage VARCHAR(255) NOT NULL,
+	techstack VARCHAR(255) NOT NULL
 );

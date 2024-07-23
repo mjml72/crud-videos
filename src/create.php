@@ -3,17 +3,17 @@
 require_once '../config/dbconnection.php';
 require_once '../functions.php';
 
-    if (isset($_POST['title']) && isset($_POST['programming']) && isset($_POST['techstack'])) {
+    if (isset($_POST['title']) && isset($_POST['proglanguage']) && isset($_POST['techstack'])) {
         try {
             $title = secureData($_POST['title']);
-            $programming = secureData($_POST['programming']);
+            $proglanguage = secureData($_POST['proglanguage']);
             $techstack = secureData($_POST['techstack']);
             
             $conn = dbConnection();
-            $query = $conn->prepare('INSERT INTO Videos (Title, Programing, Techstack)
-            VALUES(:title, :programming, :techstack);');
+            $query = $conn->prepare('INSERT INTO videos (title, proglanguage, techstack)
+            VALUES(:title, :proglanguage, :techstack);');
             $query->bindParam(':title', $title);
-            $query->bindParam(':programming', $programming);
+            $query->bindParam(':proglanguage', $proglanguage);
             $query->bindParam(':techstack', $techstack);
             $query->execute();
             
@@ -47,7 +47,7 @@ require_once '../functions.php';
             </div>
             <div>
                 <label for="programminglanguge" class="form-label">Programming Language</label>
-                <input type="text" class="form-control" id="programminglanguge" name="programming" required>
+                <input type="text" class="form-control" id="programminglanguge" name="proglanguage" required>
             </div>
             <div>
                 <label class="form-label" for="techstack">Techstack</label>

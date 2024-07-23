@@ -3,13 +3,13 @@
 
 
     function dbConnection() {
-        $servername = "";
+        $servername = "localhost";
         $username = "";
-        $database = "";
+        $database = "freecodecamp";
         $password = "";
 
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+            $conn = new PDO("pgsql:host=$servername;port=5432;dbname=$database;", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             return $conn;
